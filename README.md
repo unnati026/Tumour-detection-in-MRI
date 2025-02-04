@@ -20,12 +20,12 @@ Data/
 │── Train/
 │   ├── glioma/
 │   ├── meningioma/
-│   ├── noyumor/
+│   ├── notumor/
 │   ├── pituitary/
 │── Testing/
 │   ├── glioma/
 │   ├── meningioma/
-│   ├── no Tumor/
+│   ├── notumor/
 │   ├── pituitary/
 │── Validation/
 │   ├── glioma/
