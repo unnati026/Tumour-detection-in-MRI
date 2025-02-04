@@ -18,20 +18,20 @@ The dataset is organized into the following directories:
 ```
 Data/
 │── Train/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   ├── No Tumor/
-│   ├── Pituitary/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── noyumor/
+│   ├── pituitary/
 │── Testing/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   ├── No Tumor/
-│   ├── Pituitary/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── no Tumor/
+│   ├── pituitary/
 │── Validation/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   ├── No Tumor/
-│   ├── Pituitary/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── notumor/
+│   ├── pituitary/
 ```
 
 - **Train**: Used for training the model.
