@@ -6,8 +6,8 @@ This repository contains a deep learning-based approach to classify brain tumors
 
 - **Glioma**
 - **Meningioma**
-- **No Tumor**
 - **Pituitary**
+- **No Tumor**
 
 A Convolutional Neural Network (CNN) is implemented using PyTorch to train and evaluate the model. The model is trained on MRI images of brain tumors using a deep learning approach. It utilizes a custom CNN architecture inspired by AlexNet, optimized with Adam optimizer and cross-entropy loss.The final trained model achieves an **F2-score of 0.9745** on the test dataset.
 
@@ -18,20 +18,20 @@ The dataset is organized into the following directories:
 ```
 Data/
 │── Train/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   ├── No Tumor/
-│   ├── Pituitary/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── notumor/
+│   ├── pituitary/
 │── Testing/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   ├── No Tumor/
-│   ├── Pituitary/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── notumor/
+│   ├── pituitary/
 │── Validation/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   ├── No Tumor/
-│   ├── Pituitary/
+│   ├── glioma/
+│   ├── meningioma/
+│   ├── notumor/
+│   ├── pituitary/
 ```
 
 - **Train**: Used for training the model.
@@ -61,19 +61,23 @@ The implemented CNN model consists of the following layers:
 - **Loss Function**: Cross-Entropy Loss
 - **Epochs**: 50
 
-### Data Augmentation
+### Data Pre-Processing
 
 - Grayscale conversion
 - Resizing to (227, 227)
-- Random Rotation & Horizontal Flip
+- Normalisation
+  
+### Data Augmentation
+
+- Random Rotation
+- Horizontal Flips
 - Random Affine Transformation
-- Normalization
 
 ## Performance Metrics
 
 The model is evaluated using:
 
-- **F2-score** (Prioritizing recall over precision)
+- **F2-score** (Prioritizing recall over precision as false negatives are critical and missing a tumor can have severe consequences for patient care. On the other hand false positives are less harmful because a false alarm might lead to extra tests but is safer than missing a tumor.)
 - **Loss curve analysis**
 - **Visualization of Predictions**
 
@@ -100,16 +104,16 @@ Training performance is visualized using:
 - **Predictions on Test Samples**
 
 ## Model Saving and Loading
-The trained model is saved as model.pth. To load the model for inference:
+The trained model is saved as `model_quantized.pth`. To load the model for inference:
 
 ```python
 import torch
-model = torch.load("model.pth")
+model = torch.load("model_quantized.pth")
 model.eval()
 ```
 
 
 ## Acknowledgments
 
-- The dataset is sourced from Kaggle.
+- The dataset is sourced from Kaggle: [Brain Tumour MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset).
 - PyTorch framework for deep learning implementation inspired by AlexNet.
