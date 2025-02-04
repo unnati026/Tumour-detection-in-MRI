@@ -61,19 +61,23 @@ The implemented CNN model consists of the following layers:
 - **Loss Function**: Cross-Entropy Loss
 - **Epochs**: 50
 
-### Data Augmentation
+### Data Pre-Processing
 
 - Grayscale conversion
 - Resizing to (227, 227)
-- Random Rotation & Horizontal Flip
+- Normalisation
+  
+### Data Augmentation
+
+- Random Rotation
+- Horizontal Flips
 - Random Affine Transformation
-- Normalization
 
 ## Performance Metrics
 
 The model is evaluated using:
 
-- **F2-score** (Prioritizing recall over precision)
+- **F2-score** (Prioritizing recall over precision as false negatives are critical and missing a tumor can have severe consequences for patient care. On the other hand false positives are less harmful because a false alarm might lead to extra tests but is safer than missing a tumor.)
 - **Loss curve analysis**
 - **Visualization of Predictions**
 
@@ -100,16 +104,16 @@ Training performance is visualized using:
 - **Predictions on Test Samples**
 
 ## Model Saving and Loading
-The trained model is saved as model.pth. To load the model for inference:
+The trained model is saved as `model_quantized.pth`. To load the model for inference:
 
 ```python
 import torch
-model = torch.load("model.pth")
+model = torch.load("model_quantized.pth")
 model.eval()
 ```
 
 
 ## Acknowledgments
 
-- The dataset is sourced from Kaggle.
+- The dataset is sourced from Kaggle: [Brain Tumour MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset).
 - PyTorch framework for deep learning implementation inspired by AlexNet.
