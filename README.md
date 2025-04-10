@@ -9,7 +9,7 @@ This repository contains a deep learning-based approach to classify brain tumors
 - **Pituitary**
 - **No Tumor**
 
-A Convolutional Neural Network (CNN) is implemented using PyTorch to train and evaluate the model. The model is trained on MRI images of brain tumors using a deep learning approach. It utilizes a custom CNN architecture inspired by AlexNet, optimized with Adam optimizer and cross-entropy loss.The final trained model achieves an **F2-score of 0.9745** on the test dataset.
+A Convolutional Neural Network (CNN) is implemented using PyTorch to train and evaluate the model. The model is trained on MRI images of brain tumors using a deep learning approach. It utilizes a custom CNN architecture inspired by AlexNet, optimized with Adam optimizer and cross-entropy loss. The final trained model achieves an **F2-score of 0.9745** on the test dataset.
 
 ## Dataset
 
